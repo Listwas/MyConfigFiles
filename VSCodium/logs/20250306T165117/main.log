@@ -1,0 +1,6 @@
+2025-03-06 16:51:18.100 [info] update#setState disabled
+2025-03-06 16:51:18.103 [info] update#ctor - updates are disabled as there is no update URL
+2025-03-06 16:51:27.599 [info] Extension host with pid 9178 exited with code: 0, signal: unknown.
+2025-03-06 16:51:27.639 [error] [UtilityProcess id: 1, type: fileWatcher, pid: 9189]: crashed with code 15 and reason 'killed'
+2025-03-06 17:24:45.746 [info] Extension host with pid 9329 exited with code: 0, signal: unknown.
+2025-03-06 17:24:45.781 [error] Blocked vscode-file request vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/editor/common/services/editorSimpleWorkerMain.js#TextEditorWorker

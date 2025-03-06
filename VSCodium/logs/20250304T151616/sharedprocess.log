@@ -1,0 +1,13 @@
+2025-03-04 17:09:49.360 [info] Getting Manifest... esbenp.prettier-vscode
+2025-03-04 17:09:50.435 [info] Installing extension: esbenp.prettier-vscode {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/ben/.vscode-oss/extensions/extensions.json","path":"/home/ben/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.97.2","date":"2025-02-14T18:21:12.766Z"}}
+2025-03-04 17:09:51.944 [info] Extracted extension to file:///home/ben/.vscode-oss/extensions/esbenp.prettier-vscode-11.0.0-universal: esbenp.prettier-vscode
+2025-03-04 17:09:51.948 [info] Renamed to /home/ben/.vscode-oss/extensions/esbenp.prettier-vscode-11.0.0-universal
+2025-03-04 17:09:51.962 [info] Extension installed successfully: esbenp.prettier-vscode vscode-userdata:/home/ben/.vscode-oss/extensions/extensions.json
+2025-03-04 17:12:47.171 [info] Getting Manifest... csharpier.csharpier-vscode
+2025-03-04 17:12:47.952 [info] Installing extension: csharpier.csharpier-vscode {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/ben/.vscode-oss/extensions/extensions.json","path":"/home/ben/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.97.2","date":"2025-02-14T18:21:12.766Z"}}
+2025-03-04 17:12:48.492 [info] Extracted extension to file:///home/ben/.vscode-oss/extensions/csharpier.csharpier-vscode-2.0.6-universal: csharpier.csharpier-vscode
+2025-03-04 17:12:48.496 [info] Renamed to /home/ben/.vscode-oss/extensions/csharpier.csharpier-vscode-2.0.6-universal
+2025-03-04 17:12:48.515 [info] Extension installed successfully: csharpier.csharpier-vscode vscode-userdata:/home/ben/.vscode-oss/extensions/extensions.json
+2025-03-04 17:13:17.648 [info] Uninstalling extension from the profile: csharpier.csharpier-vscode@2.0.6 vscode-userdata:/home/ben/.vscode-oss/extensions/extensions.json
+2025-03-04 17:13:17.663 [info] Marked extension as removed csharpier.csharpier-vscode-2.0.6
+2025-03-04 17:13:18.028 [info] Successfully uninstalled extension from the profile csharpier.csharpier-vscode@2.0.6 vscode-userdata:/home/ben/.vscode-oss/extensions/extensions.json

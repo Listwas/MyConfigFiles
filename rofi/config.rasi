@@ -1,0 +1,103 @@
+* {
+    font:   "SFMono Nerd Font Mono 11";
+
+    bg0:    #0f0f0f;
+    bg1:    #1f1f1f;
+    bg2:    #2f2f2f;
+
+    fg0:    #DEDEDE;
+    fg1:    #FFFFFF;
+    fg2:    #F0C674;
+    fg3:    #666666;
+
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    background-color:   @bg0;
+    location:       center;
+    width:          500;
+    border-radius:  5;
+    border-color: @fg0;
+}
+
+inputbar {
+    font:       "SFMono Nerd Font Mono 18";
+    padding:    10px;
+    spacing:    10px;
+    children:   [ entry ];
+}
+
+icon-search {
+    expand:     false;
+    filename:   "search";
+    size: 28px;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font:   inherit;
+    placeholder: "Search";
+    placeholder-color:  @fg3;
+    text-color:         @fg2;
+}
+
+message {
+    border:             2px 0 0;
+    border-color:       @bg1;
+    background-color:   @bg1;
+}
+
+textbox {
+    text-color: @fg2;
+    padding:    8px 24px;
+}
+
+listview {
+    lines:      10;
+    columns:    1;
+    fixed-height:   false;
+    border:         1px 0 0;
+    border-color:   @bg1;
+    background-color: @bg1;
+    children: [ element ];
+}
+
+element {
+    background-color:   @bg0;
+    padding:            8px 16px;
+    spacing:            16px;
+}
+
+element normal.normal, element alternate.normal {
+    background-color: @bg0;
+    text-color: @fg1;
+}
+
+element selected.normal {
+    background-color: @bg1;
+    text-color: @fg1;
+}
+
+scrollbar {
+    handle-color: @fg0;
+    background-color: @bg1;
+}
+
+element-icon {
+    size:   1em;
+    background-color: transparent;
+}
+
+element-text {
+    text-color: inherit;
+    background-color: transparent;
+    highlight: bold #F0C674;
+}

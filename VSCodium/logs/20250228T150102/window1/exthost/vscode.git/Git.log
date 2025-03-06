@@ -1,0 +1,37 @@
+2025-02-28 15:01:04.187 [info] [main] Log level: Info
+2025-02-28 15:01:04.187 [info] [main] Validating found git in: "git"
+2025-02-28 15:01:04.212 [info] [main] Using git "2.48.1" from "git"
+2025-02-28 15:01:04.212 [info] [Model][doInitialScan] Initial repository scan started
+2025-02-28 15:01:04.236 [info] > git rev-parse --show-toplevel [10ms]
+2025-02-28 15:01:04.321 [info] > git rev-parse --git-dir --git-common-dir [11ms]
+2025-02-28 15:01:04.332 [info] [Model][openRepository] Opened repository: /home/ben/code/c/AdventCode
+2025-02-28 15:01:04.350 [info] > git rev-parse --show-toplevel [3ms]
+2025-02-28 15:01:04.351 [info] > git config --get commit.template [9ms]
+2025-02-28 15:01:04.367 [info] > git rev-parse --show-toplevel [9ms]
+2025-02-28 15:01:04.368 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-02-28 15:01:04.370 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2025-02-28 15:01:04.384 [info] > git status -z -uall [7ms]
+2025-02-28 15:01:04.385 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [2ms]
+2025-02-28 15:01:04.414 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [10ms]
+2025-02-28 15:01:04.423 [info] > git config --get --local branch.main.vscode-merge-base [3ms]
+2025-02-28 15:01:04.430 [info] > git config --get commit.template [17ms]
+2025-02-28 15:01:04.434 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [5ms]
+2025-02-28 15:01:04.469 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [22ms]
+2025-02-28 15:01:04.469 [info] > git merge-base refs/heads/main refs/remotes/origin/main [29ms]
+2025-02-28 15:01:04.483 [info] > git diff --name-status -z --diff-filter=ADMR 5166cd7a9dcc23ddb9c8f6db90e69e8cc7699e8e...refs/remotes/origin/main [6ms]
+2025-02-28 15:01:04.509 [info] > git status -z -uall [12ms]
+2025-02-28 15:01:04.509 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [5ms]
+2025-02-28 15:01:04.868 [info] > git check-ignore -v -z --stdin [2ms]
+2025-02-28 15:01:37.239 [info] [main] Log level: Info
+2025-02-28 15:01:37.239 [info] [main] Validating found git in: "git"
+2025-02-28 15:01:37.239 [info] [main] Using git "2.48.1" from "git"
+2025-02-28 15:01:37.239 [info] [Model][doInitialScan] Initial repository scan started
+2025-02-28 15:01:37.239 [info] > git rev-parse --show-toplevel [5ms]
+2025-02-28 15:01:37.239 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-02-28 15:01:37.239 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-02-28 15:01:37.684 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-28 15:01:37.684 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-02-28 15:01:38.045 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-28 15:01:38.045 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-02-28 15:01:42.221 [info] > git rev-parse --show-toplevel [1ms]
+2025-02-28 15:01:42.221 [info] fatal: not a git repository (or any of the parent directories): .git

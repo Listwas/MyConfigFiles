@@ -1,0 +1,89 @@
+#
+# reload type shit
+#
+
+# sxhkd reload 
+super + alt + Escape
+	pkill -USR1 -x sxhkd
+
+# bspwm quit/reload
+super + {q,Escape}
+	bspc {quit, wm -r}	
+
+#		   
+# window type shit 
+#		   
+
+# focus windows
+super + shift + {Left,Down,Up,Right}
+    bspc node -f {west,south,north,east}
+
+# swap windows
+super + {Left,Down,Up,Right}
+    bspc node -s {west,south,north,east}
+
+# send focused window to specific workspace
+super + shift + {1-9}
+	bspc node -d '^'{1-9}
+
+# resize window
+control + {Left,Down,Up,Right}
+  bspc node -z {left -20 0 || bspc node -z right -20 0, \
+                bottom 0 20 || bspc node -z top 0 20,\
+                top 0 -20 || bspc node -z bottom 0 -20,\
+                right 20 0 || bspc node -z left 20 0}
+
+# switch to a specific workspace
+super + {1-9}
+    bspc desktop -f '^'{1-9}
+
+#
+# other
+#
+
+# Lower volume
+super + comma
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# Raise volume
+super + period
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# Mute/unmute volume
+super + m
+    sh -c 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
+
+# launch terminal
+super + p
+	alacritty
+
+# program launcher
+super + h
+	rofi -show drun
+
+# program killer
+super + w
+	bspc node -c
+
+# firefox
+super + f
+	vivaldi
+
+# filemanager
+super + e
+	thunar
+
+# screenshot
+super + shift + s
+	scrot -s ~/Pictures/Screenshots/%b%d::%H%M%S.png -e 'xclip -selection clipboard -t image/png -i $f'
+
+# wifi
+super + n
+	alacritty -e nmtui
+
+# signal 
+super + s
+	signal-desktop
+
+
+

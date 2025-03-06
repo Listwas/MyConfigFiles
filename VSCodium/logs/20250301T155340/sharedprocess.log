@@ -1,0 +1,6 @@
+2025-03-01 14:53:45.753 [info] Getting Manifest... pkief.material-icon-theme
+2025-03-01 14:53:46.797 [info] Installing extension: pkief.material-icon-theme {"productVersion":{"version":"1.97.2","date":"2025-02-14T18:21:12.766Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/ben/.vscode-oss/extensions/extensions.json","path":"/home/ben/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true}
+2025-03-01 14:53:48.282 [info] Extracted extension to file:///home/ben/.vscode-oss/extensions/pkief.material-icon-theme-5.20.0-universal: pkief.material-icon-theme
+2025-03-01 14:53:48.318 [info] Renamed to /home/ben/.vscode-oss/extensions/pkief.material-icon-theme-5.20.0-universal
+2025-03-01 14:53:48.334 [info] Marked extension as removed pkief.material-icon-theme-5.19.0-universal
+2025-03-01 14:53:48.337 [info] Extension installed successfully: pkief.material-icon-theme vscode-userdata:/home/ben/.vscode-oss/extensions/extensions.json

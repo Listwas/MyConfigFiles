@@ -1,0 +1,28 @@
+2025-02-25 21:43:36.165 [info] [main] Log level: Info
+2025-02-25 21:43:36.165 [info] [main] Validating found git in: "git"
+2025-02-25 21:43:36.165 [info] [main] Using git "2.48.1" from "git"
+2025-02-25 21:43:36.165 [info] [Model][doInitialScan] Initial repository scan started
+2025-02-25 21:43:36.165 [info] > git rev-parse --show-toplevel [5ms]
+2025-02-25 21:43:36.165 [info] > git rev-parse --git-dir --git-common-dir [15ms]
+2025-02-25 21:43:36.165 [info] [Model][openRepository] Opened repository: /home/ben/code/c/AdventCode
+2025-02-25 21:43:36.166 [info] > git rev-parse --show-toplevel [2ms]
+2025-02-25 21:43:36.167 [info] > git config --get commit.template [9ms]
+2025-02-25 21:43:36.185 [info] > git rev-parse --show-toplevel [9ms]
+2025-02-25 21:43:36.185 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-02-25 21:43:36.186 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2025-02-25 21:43:36.202 [info] > git status -z -uall [9ms]
+2025-02-25 21:43:36.204 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [4ms]
+2025-02-25 21:43:36.233 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [9ms]
+2025-02-25 21:43:36.243 [info] > git config --get --local branch.main.vscode-merge-base [3ms]
+2025-02-25 21:43:36.250 [info] > git config --get commit.template [18ms]
+2025-02-25 21:43:36.254 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [5ms]
+2025-02-25 21:43:36.290 [info] > git merge-base refs/heads/main refs/remotes/origin/main [28ms]
+2025-02-25 21:43:36.300 [info] > git diff --name-status -z --diff-filter=ADMR 5166cd7a9dcc23ddb9c8f6db90e69e8cc7699e8e...refs/remotes/origin/main [3ms]
+2025-02-25 21:43:36.301 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [12ms]
+2025-02-25 21:43:36.316 [info] > git status -z -uall [7ms]
+2025-02-25 21:43:36.318 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2025-02-25 21:43:36.679 [info] > git check-ignore -v -z --stdin [1ms]
+2025-02-25 21:43:51.860 [info] > git show --textconv :2015/2015_2/main.c [10ms]
+2025-02-25 21:43:51.862 [info] > git ls-files --stage -- /home/ben/code/c/AdventCode/2015/2015_2/main.c [2ms]
+2025-02-25 21:43:51.873 [info] > git cat-file -s 3fe51e5db3df1794abed25bb3732f1810aa53513 [2ms]
+2025-02-25 21:43:51.902 [info] > git blame --root --incremental 5166cd7a9dcc23ddb9c8f6db90e69e8cc7699e8e -- /home/ben/code/c/AdventCode/2015/2015_2/main.c [1ms]

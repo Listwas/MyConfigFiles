@@ -1,0 +1,86 @@
+conky.config = {
+    alignment = 'top_right',
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = '#E0E0E0',  -- Off-white text
+    default_outline_color = '#E0E0E0',
+    default_shade_color = '#2A2A2A',  -- Dark charcoal
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = true,
+    font = 'DejaVu Sans Mono:size=10',
+    gap_x = 20,
+    gap_y = 60,
+    minimum_height = 5,
+    minimum_width = 320,  -- Ensures space for side-by-side layout
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_x = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 150,  -- Subtle transparency
+    show_graph_range = false,
+    show_graph_scale = false,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+    -- Custom colors for sections
+    color1 = '#C3B1E1',  -- Lavender for CPU
+    color2 = '#A2D2C2',  -- Mint for Memory
+    color3 = '#F4A261',  -- Peach for GPU
+    color4 = '#87CEEB',  -- Sky blue for Storage
+    color5 = '#FFD700',  -- Soft yellow for Network
+}
+
+conky.text = [[
+${color #B0B0B0}SYSTEM${color}
+${color1}OS: ${color}${sysname} ${kernel}
+${color1}Hostname: ${color}${nodename}
+${color1}Uptime: ${color}${uptime}
+${color #B0B0B0}${hr}
+
+${color #B0B0B0}CPU${color}
+${color1}Usage: ${color}${cpu cpu0}% ${cpubar 6,150}
+${color1}Top Processes:
+${color}${top name 1} ${top cpu 1}%
+${color}${top name 2} ${top cpu 2}%
+${color}${top name 3} ${top cpu 3}%
+${color #B0B0B0}${hr}
+
+${color #B0B0B0}MEMORY${color}
+${color2}RAM: ${color}${mem} / ${memmax} (${memperc}%) ${membar 6,150}
+${color2}SWAP: ${color}${swap} / ${swapmax} (${swapperc}%) ${swapbar 6,150}
+${color2}Top Processes:
+${color}${top_mem name 1} ${top_mem mem 1}%
+${color}${top_mem name 2} ${top_mem mem 2}%
+${color}${top_mem name 3} ${top_mem mem 3}%
+${color #B0B0B0}${hr}
+
+${color #B0B0B0}GPU${color}
+${color3}NVIDIA${goto 160}${color3}AMD${color}
+${color3}Usage: ${color}${exec nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits}%${goto 160}${color3}Usage: ${color}${exec cat /sys/class/drm/card1/device/gpu_busy_percent}%
+${color3}Temp: ${color}${exec nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits}°C${goto 160}${color3}Temp: ${color}${exec cat /sys/class/drm/card1/device/hwmon/hwmon5/temp1_input | awk '{print $1/1000 "°C"}'}
+${goto 0}${execgraph "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits" 20,150 2A2A2A F4A261} ${goto 160}${execgraph "cat /sys/class/drm/card1/device/gpu_busy_percent" 20,150 2A2A2A F4A261}
+${color #B0B0B0}${hr}
+
+${color #B0B0B0}STORAGE${color}
+${color4}Used: ${color}${fs_used /} / ${fs_size /} (${fs_used_perc /}%) ${fs_bar 6,150 /}
+${color4}Read: ${color}${diskio_read /dev/nvme1n1p3}  ${color4}Write: ${color}${diskio_write /dev/nvme1n1p3}
+${color4}Read Graph: ${color}${diskiograph_read /dev/nvme1n1p3 20,150 2A2A2A 87CEEB}
+${color4}Write Graph: ${color}${diskiograph_write /dev/nvme1n1p3 20,150 2A2A2A 87CEEB}
+${color #B0B0B0}${hr}
+
+${color #B0B0B0}NETWORK${color}
+${color5}Local IP: ${color}${addr wlp3s0}
+${color5}External IP: ${color}${execi 3600 curl ifconfig.me}
+${color5}Traffic: Down ${color}${downspeed wlp3s0}, Up ${color}${upspeed wlp3s0}
+${color5}Download${goto 160}Upload${color}
+${goto 0}${downspeedgraph wlp3s0 20,150 2A2A2A FFD700} ${goto 160}${upspeedgraph wlp3s0 20,150 2A2A2A FFD700}
+${color5}Total: Down ${color}${totaldown wlp3s0}, Up ${color}${totalup wlp3s0}
+${color #B0B0B0}${hr}
+]]
