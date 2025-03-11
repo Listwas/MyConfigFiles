@@ -18,6 +18,6 @@ case "$status" in
         echo "%{F#FFFFFF} 100%%{F-}"  
         ;;
     *)
-        echo "Battery: $capacity%"  
+        echo "%{F#FFFF00} 60% =%{F-}"  
         ;;
 esac
