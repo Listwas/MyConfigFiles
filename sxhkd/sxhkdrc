@@ -66,7 +66,7 @@ super + p
 
 # program launcher
 super + h
-	_JAVA_AWT_WM_NONREPARENTING=1 rofi -show drun
+	$HOME/.config/rofi/scripts/launcher_t2
 
 # program killer
 super + w
@@ -82,7 +82,7 @@ super + e
 
 # screenshot
 super + shift + s
-	scrot -s ~/Pictures/Screenshots/%b%d::%H%M%S.png -e 'xclip -selection clipboard -t image/png -i $f'
+   flameshot gui -c -p ~/Pictures/Screenshots
 
 # wifi
 super + n

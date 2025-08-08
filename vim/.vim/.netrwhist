@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/ben/.config/bspwm'
+let g:netrw_dirhist_3='/home/ben/code/asteroids_game/.git'
+let g:netrw_dirhist_2='/home/ben/code/bookbot/.git'
+let g:netrw_dirhist_1='/home/ben/code/course/webflyx/.git'
+let g:netrw_dirhist_0='/home/ben/.config/gtk-2.0'
+let g:netrw_dirhist_9='/home/ben/.config/gtk-3.0'
+let g:netrw_dirhist_8='/home/ben/code/AdventOfCode/README.md'
+let g:netrw_dirhist_7='/home/ben/.config/polybar/fonts'
+let g:netrw_dirhist_6='/home/ben/.config/conky.conf'
+let g:netrw_dirhist_5='/etc/X11'

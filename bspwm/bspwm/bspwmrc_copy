@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# Launch SXHKD
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+count_monitors()
+{
+	xrandr | grep -E '[^dis]connected' | grep "^$1" | wc -l
+}  
+
+# detect connected monitors
+HDMI_CONNECTED=$(xrandr | grep -q '^HDMI[^ ]* connected' && echo 1 || echo 0)
+DP_CONNECTED=$(xrandr | grep -q '^DP-[^ ]* connected' && echo 1 || echo 0)
+EDP_CONNECTED=$(xrandr | grep -q '^eDP[^ ]* connected' && echo 1 || echo 0)
+
+# define output names
+HDMI="HDMI-A-0"
+DP="DP-1-0"
+EDP="eDP"
+
+# turn everything off first
+xrandr --output "$HDMI" --off --output "$DP" --off --output DP-1-1 --off
+
+if [ "$HDMI_CONNECTED" -eq 1 ] && [ "$DP_CONNECTED" -eq 1 ]; then
+	# rule 2 – both HDMI and DP → use both, turn off eDP
+	xrandr \
+		--output "$EDP" --off \
+		--output "$HDMI" --mode 2560x1440 --rate 70 --pos 0x0 --rotate normal \
+		--output "$DP" --primary --mode 1920x1080 --rate 240 --pos 2560x0 --rotate normal
+	bspc monitor "$DP" -d 1 2 3 4 5 6
+	bspc monitor "$HDMI" -d 7 8 9
+	bspc monitor "$EDP" -r
+
+elif [ "$DP_CONNECTED" -eq 1 ]; then
+	# rule 1 – only DP → turn off eDP, use DP as primary
+	xrandr \
+		--output "$EDP" --off \
+		--output "$DP" --primary --mode 1920x1080 --rate 240 --pos 0x0 --rotate normal
+	bspc monitor "$DP" -d 1 2 3 4 5 6
+	bspc monitor "$EDP" -r
+
+elif [ "$HDMI_CONNECTED" -eq 1 ]; then
+	# rule 1 – only HDMI → turn off eDP, use HDMI as primary
+	xrandr \
+		--output "$EDP" --off \
+		--output "$HDMI" --primary --mode 2560x1440 --rate 70 --pos 0x0 --rotate normal
+	bspc monitor "$HDMI" -d 1 2 3 4 5 6
+	bspc monitor "$EDP" -r
+
+else
+	# rule 3 – only eDP
+	xrandr \
+		--output "$EDP" --mode 1920x1080 --rate 144 --primary --pos 0x0 --rotate normal
+	bspc monitor "$EDP" -d 1 2 3 4 5 6
+fi
+
+
+# Set general BSPWM appearance and behavior
+bspc config border_width         1
+bspc config focused_border_color "#7c05d5"
+bspc config window_gap           0
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer true
+bspc config bottom_padding 10
+bspc config automatic_scheme monocle
+bspc config initial_polarity second_child
+
+# Arrange monitors with xrandr
+~/.screenlayout/display.sh
+
+# Autostart applications
+sxhkd &
+picom --config $HOME/.config/picom/picom.conf &
+nitrogen --restore &
+dunst &
+polybar &
+copyq --start-server &

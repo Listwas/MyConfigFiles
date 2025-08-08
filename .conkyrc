@@ -1,11 +1,12 @@
+
 conky.config = {
     alignment = 'top_right',
     background = false,
     border_width = 1,
     cpu_avg_samples = 2,
-    default_color = '#E0E0E0',  -- Off-white text
+    default_color = '#E0E0E0',
     default_outline_color = '#E0E0E0',
-    default_shade_color = '#2A2A2A',  -- Dark charcoal
+    default_shade_color = '#2A2A2A',
     double_buffer = true,
     draw_borders = false,
     draw_graph_borders = true,
@@ -13,7 +14,7 @@ conky.config = {
     gap_x = 20,
     gap_y = 60,
     minimum_height = 5,
-    minimum_width = 320,  -- Ensures space for side-by-side layout
+    minimum_width = 320,
     net_avg_samples = 2,
     no_buffers = true,
     out_to_x = true,
@@ -22,19 +23,18 @@ conky.config = {
     own_window_type = 'desktop',
     own_window_transparent = false,
     own_window_argb_visual = true,
-    own_window_argb_value = 150,  -- Subtle transparency
+    own_window_argb_value = 150,
     show_graph_range = false,
     show_graph_scale = false,
-    update_interval = 1.0,
+    update_interval = 0.5,
     uppercase = false,
     use_spacer = 'none',
     use_xft = true,
-    -- Custom colors for sections
-    color1 = '#C3B1E1',  -- Lavender for CPU
-    color2 = '#A2D2C2',  -- Mint for Memory
-    color3 = '#F4A261',  -- Peach for GPU
-    color4 = '#87CEEB',  -- Sky blue for Storage
-    color5 = '#FFD700',  -- Soft yellow for Network
+    color1 = '#C3B1E1',
+    color2 = '#A2D2C2',
+    color3 = '#F4A261',
+    color4 = '#87CEEB',
+    color5 = '#FFD700',
 }
 
 conky.text = [[
@@ -65,7 +65,7 @@ ${color #B0B0B0}GPU${color}
 ${color3}NVIDIA${goto 160}${color3}AMD${color}
 ${color3}Usage: ${color}${exec nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits}%${goto 160}${color3}Usage: ${color}${exec cat /sys/class/drm/card1/device/gpu_busy_percent}%
 ${color3}Temp: ${color}${exec nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits}°C${goto 160}${color3}Temp: ${color}${exec cat /sys/class/drm/card1/device/hwmon/hwmon5/temp1_input | awk '{print $1/1000 "°C"}'}
-${goto 0}${execgraph "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits" 20,150 2A2A2A F4A261} ${goto 160}${execgraph "cat /sys/class/drm/card1/device/gpu_busy_percent" 20,150 2A2A2A F4A261}
+${goto 0}${execigraph 2 "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits" 20,150 2A2A2A F4A261} ${goto 160}${execigraph 2 "cat /sys/class/drm/card1/device/gpu_busy_percent" 20,150 2A2A2A F4A261}
 ${color #B0B0B0}${hr}
 
 ${color #B0B0B0}STORAGE${color}
