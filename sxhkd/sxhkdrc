@@ -1,14 +1,13 @@
 #
 # reload type shit
 #
-
-# sxhkd reload 
-super + alt + Escape
-	pkill -USR1 -x sxhkd
-
 # bspwm quit/reload
 super + {q,Escape}
 	bspc {quit, wm -r}	
+
+# reload sxhkd, Polybar
+super + shift + Escape
+	pkill -USR1 -x sxhkd; pkill -x polybar; polybar main &
 
 #		   
 # window type shit 
@@ -37,6 +36,14 @@ control + {Left,Down,Up,Right}
 super + {1-9}
     bspc desktop -f '^'{1-9}
 
+# window set tiled
+super + k
+    bspc node --state tiled
+
+# window set floating
+super + l
+    bspc node --state floating
+
 #
 # other
 #
@@ -59,13 +66,13 @@ super + p
 
 # program launcher
 super + h
-	rofi -show drun
+	_JAVA_AWT_WM_NONREPARENTING=1 rofi -show drun
 
 # program killer
 super + w
 	bspc node -c
 
-# firefox
+# browser
 super + f
 	vivaldi
 

@@ -13,12 +13,12 @@ HDMI_MONITOR=$(count_monitors HDMI)
 DP_MONITOR=$(count_monitors DP)
 
 if [ $HDMI_MONITOR -eq 1 ] && [ $DP_MONITOR -eq 1 ]; then
-	xrandr --output eDP --off --output HDMI-A-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --rate 69.93 --output DP-1-0 --mode 1920x1080 --pos 2560x0 --rotate normal --output DP-1-1 --off
+	xrandr --output eDP --off --output HDMI-A-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --rate 70 --output DP-1-0 --mode 1920x1080 --pos 2560x0 --rotate normal --rate 240 --output DP-1-1 --off
 	bspc monitor HDMI-A-0 -d 1 2 3 4 5
 	bspc monitor DP-1-0 -d 6 
 	bspc monitor eDP -r
 elif [ $HDMI_MONITOR -eq 1 ] && [ $DP_MONITOR -eq 0 ]; then		 
- 	xrandr --output eDP --off --output HDMI-A-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --rate 69.93 --output DP-1-0 --off --output DP-1-1 --off
+ 	xrandr --output eDP --off --output HDMI-A-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --rate 70 --output DP-1-0 --off --output DP-1-1 --off
 	bspc monitor HDMI-A-0 -d 1 2 3 4 5 6
 	bspc monitor eDP -r
 else
@@ -29,14 +29,15 @@ fi
 # Set general BSPWM appearance and behavior
 bspc config border_width         1
 bspc config focused_border_color "#690c6f"
-bspc config window_gap           2
+bspc config window_gap           0
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
-bspc config bottom_padding 0
+bspc config bottom_padding 10
 bspc config automatic_scheme monocle
 bspc config initial_polarity second_child
+bspc rule -a '*' state=pseudo_floating
 
 # Arrange monitors with xrandr
 ~/.screenlayout/display.sh
