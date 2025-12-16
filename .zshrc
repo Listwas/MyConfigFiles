@@ -5,8 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias ll='ls -la'
+alias ls='lsd --color=auto'
+alias ll='lsd -la'
+alias la='lsd -a'
 alias grep='grep --color=auto'
 
 PS1="%B%F{#7c05d5}%n%f%b %~ "
@@ -22,6 +23,7 @@ alias spwm='vim $HOME/.config/bspwm/bspwmrc'
 alias gs='git status'
 alias gl='git log --oneline'
 alias monitor='conky'
+alias uefi='systemctl reboot --firmware-setup'
 
 libre() {
     libreoffice "$1" & disown
@@ -61,7 +63,7 @@ update-mirrorlist() {
 }
 
 
-export GOROOT=$HOME/.local/opt/go-v1.24.3
+export GOROOT=$HOME/.local/opt/go-v1.25.0
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH

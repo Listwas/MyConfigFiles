@@ -1,14 +1,16 @@
 #
 # reload type shit
 #
-# bspwm quit/reload
-super + {q,Escape}
-	bspc {quit, wm -r}	
+# bspwm quit
+super + q
+	bspc quit	
 
-# reload sxhkd, Polybar
-super + shift + Escape
-	pkill -USR1 -x sxhkd; pkill -x polybar; polybar main &
-
+# reload bspwm, sxhkd, Polybar
+super + Escape
+    bspc wm -r && \
+    pkill -USR1 -x sxhkd && \
+    pkill -x polybar && \
+    polybar main &
 #		   
 # window type shit 
 #		   
@@ -74,7 +76,7 @@ super + w
 
 # browser
 super + f
-	vivaldi
+    vivaldi
 
 # filemanager
 super + e
@@ -91,6 +93,4 @@ super + n
 # signal 
 super + s
 	signal-desktop
-
-
 

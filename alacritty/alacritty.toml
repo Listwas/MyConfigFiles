@@ -1,16 +1,11 @@
 [window]
-
 opacity = 0.8
 
-padding.x = 6
-padding.y = 6
+padding.x = 0
+padding.y = 0
 
 decorations = "Full"
 decorations_theme_variant = "Dark"
-
-[[colors.indexed_colors]]
-color = "0xd18616"
-index = 16
 
 [[colors.indexed_colors]]
 color = "0xffa198"
@@ -38,4 +33,9 @@ yellow = "0xd29922"
 
 [colors.primary]
 background = "0x0f0f0f"
+
 foreground = "0xb3b1ad"
+
+[font]
+size = 12
+

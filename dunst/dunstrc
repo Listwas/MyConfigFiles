@@ -105,6 +105,10 @@
     mouse_middle_click = do_action
     # Right click
     mouse_right_click = do_action
+[ignore_copyq]
+appname = "CopyQ"
+summary = " "
+
 
 [shortcuts]
 
