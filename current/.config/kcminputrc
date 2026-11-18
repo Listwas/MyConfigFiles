@@ -1,0 +1,10 @@
+[Libinput][4152][5926][SteelSeries SteelSeries Rival 650 Wireless]
+PointerAcceleration=0.000
+PointerAccelerationProfile=1
+
+[Libinput][4152][5931][SteelSeries SteelSeries Rival 650 Wireless]
+PointerAccelerationProfile=1
+
+[Libinput][7805][12041][ROCCAT ROCCAT Vulcan II Mini Mouse]
+PointerAccelerationProfile=1
+ScrollFactor=0.75

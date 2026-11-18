@@ -1,0 +1,14 @@
+[8a001271-39c7-49e7-9001-e3a793601b1f]
+Description=Window settings for Alacritty
+position=1280,29
+positionrule=3
+size=1280,691
+sizerule=3
+title=~ - fish
+types=1
+wmclass=alacritty Alacritty
+wmclasscomplete=true
+wmclassmatch=1
+
+[General]
+Order=8a001271-39c7-49e7-9001-e3a793601b1f

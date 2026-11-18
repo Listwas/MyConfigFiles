@@ -1,0 +1,66 @@
+[window]
+padding.x = 20
+padding.y = 16
+dynamic_padding = true
+opacity = 0.95
+blur = true
+decorations = "Full"
+startup_mode = "Windowed"
+
+[font]
+normal.family = "JetBrainsMono Nerd Font Mono"
+bold.family = "JetBrainsMono Nerd Font Mono"
+italic.family = "JetBrainsMono Nerd Font Mono"
+size = 11.5
+
+offset.x = 0
+offset.y = 2
+glyph_offset.y = 1
+
+[colors]
+# Near-black surface with a warm red cursor and muted syntax colors.
+primary.background = "#0e1114"
+primary.foreground = "#dce2e4"
+primary.dim_foreground = "#929ea5"
+
+cursor.text = "#0e1114"
+cursor.cursor = "#ed646a"
+
+selection.text = "#f0f3f4"
+selection.background = "#394c54"
+
+normal.black   = "#2b333a"
+normal.red     = "#ed7379"
+normal.green   = "#8dc8b3"
+normal.yellow  = "#d8b582"
+normal.blue    = "#8eafd9"
+normal.magenta = "#bea5d0"
+normal.cyan    = "#86bec8"
+normal.white   = "#dce2e4"
+
+bright.black   = "#76838d"
+bright.red     = "#ff8c90"
+bright.green   = "#a9deca"
+bright.yellow  = "#edcc98"
+bright.blue    = "#adc8ee"
+bright.magenta = "#d4bee6"
+bright.cyan    = "#a4d8df"
+bright.white   = "#f3f6f7"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[cursor]
+style.shape = "Beam"
+style.blinking = "On"
+blink_interval = 650
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" }
+]
